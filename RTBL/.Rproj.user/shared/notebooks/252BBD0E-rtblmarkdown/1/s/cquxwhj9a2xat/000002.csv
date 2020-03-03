@@ -1,0 +1,6 @@
+"0","rtbl$MI_BPS17_RECEIPT_DT <- as.Date(rtbl$MI_BPS17_RECEIPT_DT, format = ""%d/%m/%Y %H:%M"")"
+"0","class(rtbl$MI_BPS17_RECEIPT_DT)"
+"1","[1]"
+"1"," ""Date"""
+"1","
+"

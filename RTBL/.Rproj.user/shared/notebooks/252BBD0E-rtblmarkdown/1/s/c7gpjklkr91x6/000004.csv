@@ -1,0 +1,2 @@
+"0","ggplot(rtbl,aes(x=bps17_app_status)) +"
+"0","  geom_bar()"

@@ -1,0 +1,99 @@
+---
+title: "RTBL_Exercises"
+output: html_document
+editor_options: 
+  chunk_output_type: inline
+---
+
+### Importing and barcharts
+Import the csv
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Load libraries (dplyr and ggplot2)and read in the rbbl to a dataframe called rtbl
+```{r, include=FALSE,echo=FALSE}
+library(dplyr)
+library(ggplot2)
+```
+
+```{r}
+rtbl <- read.csv("STG_RTBL20170623_DUMMYDATA.csv",header=TRUE)
+```
+
+If we want to do a plot based on the app stratus, we get this:
+```{r echo=TRUE}
+ggplot(rtbl,aes(x=bps17_app_status)) +
+  geom_bar()
+```
+
+Note the 1st col, which is populating blanks. To get rid of this we can change all the blanks to NA in the dataframe
+```{r}
+rtbl[rtbl==""] <- NA
+```
+
+Now if we run the plot the blanks have become NAs, so are ignored in the output when we use the !is.na function to filter them out
+```{r,echo=TRUE}
+ggplot(rtbl[!is.na(rtbl$bps17_app_status),],aes(x=bps17_app_status)) +
+  geom_bar() +
+  labs(x = "app_status",title="NA's instead of blanks")
+```
+
+So what else can we do?
+
+We could split the bars using fill= in the aes.
+
+```{r, echo=TRUE}
+ggplot(rtbl[!is.na(rtbl$bps17_app_status),],aes(x=bps17_app_status,fill=MI_BPS17_ONLINE_REC_FLG)) + 
+  geom_bar() +
+  labs(x = "app_status",title="app_status count showing online receipts")
+```
+
+That doesn't seem to work. Let's see what type of data it is, as it has to be a factor with levels and not something like a number.
+```{r ,echo=TRUE}
+class(rtbl$MI_BPS17_ONLINE_REC_FLG)
+```
+s
+We need to change it to a type that has limited values, like a *factor*, which has levels rather than being a continous data type. So we change it to a factor.
+
+```{r, echo=TRUE}
+rtbl$MI_BPS17_ONLINE_REC_FLG <- as.factor(rtbl$MI_BPS17_ONLINE_REC_FLG)
+
+class(rtbl$MI_BPS17_ONLINE_REC_FLG)
+```
+
+So now when we trt to FILL with MI_BPS17_ONLINE_REC_FLG we get a better result
+```{r}
+ggplot(rtbl[!is.na(rtbl$bps17_app_status),],aes(x=bps17_app_status,fill=MI_BPS17_ONLINE_REC_FLG)) + 
+  geom_bar() +
+  labs(x = "app_status",title="app_status count showing online receipts")
+```
+
+Rather than splitting the bars, we can plot them alongside each other with *facets*. Note the tilde and the ., denoting the order and positioning of the panels. The facet item cannot be a continuous data type. More on facets here: https://plot.ly/ggplot2/facet/
+```{r}
+ggplot(rtbl[!is.na(rtbl$bps17_app_status),],aes(x=bps17_app_status)) + 
+  geom_bar() +
+  labs(x = "app_status",title="app_status count showing online receipt flag") +
+  facet_grid(.~MI_BPS17_ONLINE_REC_FLG)
+```
+
+How about a line graph? For these, the line must be continuous, and you need to specify an x and a y measure.
+We could do with using a date column such as MI_BPS17_RECEIPT_DT.
+```{r,echo=TRUE}
+class(rtbl$MI_BPS17_RECEIPT_DT)
+```
+
+
+So we change to a date. To do this we have to specify what format the date is currently in so it can interpret the values it finds.
+```{r}
+rtbl$MI_BPS17_RECEIPT_DT <- as.Date(rtbl$MI_BPS17_RECEIPT_DT, format = "%d/%m/%Y %H:%M")
+
+class(rtbl$MI_BPS17_RECEIPT_DT)
+```
+
+```{r test}
+
+```
+```{r}
+
+```

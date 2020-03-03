@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1521905661200.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1931118971",
+    "id" : "B642B6D8",
+    "lastKnownWriteTime" : 1522509778,
+    "last_content_update" : 1522509778847,
+    "path" : "~/Documents/R/RTBL/rtblmarkdown.Rmd",
+    "project_path" : "rtblmarkdown.Rmd",
+    "properties" : {
+        "chunk_output_type" : "inline",
+        "cursorPosition" : "97,0",
+        "docOutlineVisible" : "0",
+        "last_setup_crc32" : "",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

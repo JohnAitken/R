@@ -1,0 +1,18 @@
+---
+title: "Markdown exercise"
+author: "John Aitken"
+date: "18 March 2018"
+---
+
+```{r include=FALSE}
+library(ggplot2)
+library(stringr)
+library(dplyr)
+```
+Load the mpg set and do a gglpot bar chart on it.
+```{r}
+stuff<-mpg
+head(mpg)
+ggplot(data=stuff, aes(x=manufacturer)) + geom_bar()
+```
+

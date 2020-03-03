@@ -1,0 +1,101 @@
+Simulation,Winner,Runner Up,Third,Fourth,Golden Boot,Goals Scored,Best Player,Average Rating,Final Score,Goalscorers
+1,Belgium,Spain,Uruguay,England,Cavani,6,Isco,7.61,1-0,R.Lukaku
+2,France,Spain,Brazil,Serbia,Mbappe,6,Neymar,7.31,1-0e,Mbappe
+3,France,Belgium,Spain,Germany,Falcao,8,E. Hazard,7.77,1-1p,"Griezmann, E.Hazard"
+4,England,Argentina,Spain,Belgium,E.Hazard,8,E.Hazard,8.43,1-1p,"Higuain, Dier"
+5,Uruguay,Spain,Colombia,Senegal,Falcao,10,Falcao,8.07,1-0,L.Suarez
+6,Belgium,Spain,England,Portugal,Harry Kane,5,Isco,7.71,1-0e,E.Hazard
+7,Belgium,Brazil,Portugal,Croatia,R.Lukaku,6,E.Hazard,8.2,1-0,E.Hazard
+8,Belgium,Argentina,England,Spain,R.Lukaku,7,R.Lukaku,7.61,3-1.,"R.Lukaku, E. Hazard, L.Bailey, Messi"
+9,France,Argentina,Colombia,Serbia,C.Ronaldo,7,Di Maria,7.6,4-3.,"Di Maria, Mbappe, O.Dembele, Dybala, Griezmann x2, Aguero"
+10,Brazil,Portugal,France,Mexico,J.Hernandez,4,Bernardo Silva,7.51,1-0,Firmino
+11,Brazil,Croatia,France,Sweden,Griezmann,7,I.Perisic,7.83,6-3e,"Giuliano x3, N.Kalinic x2, D.Alves, Rakitic, Fernandinho, D.Luiz"
+12,Spain,France,Brazil,Germany,Milik,6,D.Silva,7.36,1-0,Isco
+13,France,Germany,Argentina,England,Smolov,7,Lingard,7.4,2-0,"Griezmann, Coman"
+14,Germany,Spain,France,Brazil,T.Muller,6,Reus,7.67,3-1.,"Sané, Isco, Reus, T.Muller"
+15,Serbia,Spain,Brazil,Portugal,C.Ronaldo,5,Isco,7.47,1-0e,Scepovic
+16,Germany,Spain,Uruguay,Brazil,Lallana,6,Gundogan,7.44,2-0,"T.Muller, Sané"
+17,Belgium,England,Spain,Egypt,Aguero,8,E.Hazard,8.3,2-0,"Nainggolan, L.Bailey"
+18,Brazil,England,France,Uruguay,Firmino,8,Fabinho,7.54,4-0,"Firmino x3, Willian"
+19,Spain,Argentina,Belgium,Colombia,Dybala,8,Isco,7.93,4-2e,"Isco, Lamela, Morata, Messi, Iniesta, Pedro"
+20,Belgium,Croatia,Sweden,Argentina,Dybala,6,E.Hazard,7.81,4-1.,"E.Hazard x2, R Lukaku, OG, L Bailey"
+21,Russia,Germany,Uruguay,Mexico,L.Suarez,7,Ozil,8,3-2.,"Golovin, T.Muller x2, Zobdin, Samedov"
+22,Belgium,Brazil,Uruguay,Portugal,E.Hazard,8,E.Hazard,8.27,2-1e,"R.Lukaku, Marcelo, E.Hazard"
+23,Spain,England,Poland,Croatia,Diego Costa,9,Diego Costa,7.71,1-0,D.Silva
+24,Uruguay,Russia,Belgium,Panama,L.Suarez,8,E.Hazard,8.17,2-0,"Cavani, L.Suarez"
+25,France,Denmark,Belgium,Poland,Falcao,4,D.Sidibé,7.66,1-0e,Mbappe
+26,Belgium,Spain,England,Portugal,Falcao,6,Koke,7.69,3-2e,"Origi x2, Alba, S.Ramos, Defour"
+27,Brazil,France,Argentina,Mexico,Bacca,6,Neymar,8.01,2-2p,"Douglas Costa, Coman, Griezmann, G.Jesus"
+28,France,Russia,Colombia,Poland,Guidetti,6,Grosicki,7.74,2-0,"Umtiti, Griezmann"
+29,Portugal,Spain,Mexico,Belgium,C.Ronaldo,7,C.Ronaldo,7.54,1-0e,A.Silva
+30,Belgium,Argentina,Brazil,Portugal,Harry Kane,7,E.Hazard,8.23,4-2.,"Higuan, Mertens x4, Aguero"
+31,Brazil,Egypt,England,Spain,N.Jorgensen,8,Neymar,8.04,3-0,"Firmino, Neymar, Fabinho"
+32,England,Argentina,Germany,Denmark,Dybala,6,Dybala,7.87,3-2.,"Aguero x2, Oxlade-Chamberlain, Sterling x2"
+33,Spain,Portugal,Serbia,Belgium,C.Ronaldo,8,E.Hazard,7.63,2-1.,"C.Ronaldo, OG, D.Silva"
+34,Poland,Brazil,Spain,Croatia,Lewandowski,7,Lewandowski,7.73,2-1.,"Milik, Jesus, Lewandowski"
+35,Belgium,France,Morocco,England,E.Hazard,5,E.Hazard,8.03,3-1e,"Mertens, L.Bailey, Griezmann, E.Hazard"
+36,Colombia,Uruguay,England,Peru,Harry Kane,7,Lingard,8,2-1e,"Rolan, Fabra, Falcao"
+37,Belgium,England,Uruguay,France,Harry Kane,9,Harry Kane,7.86,1-0,Batshuayi
+38,Belgium,Germany,France,Spain,Reus,6,E.Hazard,7.74,2-1.,"Mertens, E.Hazard, Reus"
+39,Belgium,England,Peru,Argentina,Dybala,8,E.Hazard,7.94,2-0,"Nainggolan, E.Hazard"
+40,Argentina,Germany,Belgium,Spain,E.Hazard,6,Reus,7.86,0-0p,
+41,Denmark,France,Colombia,Poland,Milik,7,Coman,8.03,1-0,Fischer
+42,Belgium,Brazil,Spain,Croatia,Diego Costa,8,Diego Costa,7.83,0-0p,
+43,England,Argentina,Nigeria,Germany,Harry Kane,8,Messi,8.59,3-1.,"Henderson, Messi, Harry Kane x2"
+44,Brazil,Belgium,Spain,Uruguay,L.Suarez,7,E.Hazard,8.06,1-0,Firmino
+45,France,Belgium,Germany,Argentina,Aguero,14,Aguero,8.83,2-1.,"Witsel, Griezmann, Matuidi"
+46,France,Uruguay,Brazil,South Korea,Cavani,11,Matuidi,7.47,2-1.,"Godin, Lacazette, Kante"
+47,Spain,Brazil,Russia,Serbia,Lewandowski,8,D.Silva,7.81,3-1.,"Luan, Morata x3"
+48,France,Spain,Serbia,Belgium,Coman,8,Coman,8.39,2-1.,"D.Silva, Sidibé, Mbappe"
+49,Spain,Russia,Poland,Serbia,Milik,7,Isco,8.13,4-0,"S.Ramos, Pedro, Diego Costa, Isco"
+50,Argentina,Brazil,Denmark,Switzerland,Higuain,7,Aguero,7.9,1-0,Higuain
+51,Portugal,England,Spain,Mexico,Isco,7,Isco,7.99,2-0,"A.Silva, Pepe"
+52,Belgium,Egypt,Portugal,Sweden,C.Ronaldo,9,C.Ronaldo,7.94,2-1.,"Salah, E.Hazard, Mertens"
+53,France,Spain,Belgium,England,Aguero,8,E.Hazard,7.43,1-0,Tolisso
+54,Belgium,Portugal,Brazil,Peru,E.Hazard,7,E.Hazard,8.07,2-1e,"E.Hazard, Bernardo Silva, R.Lukaku"
+55,France,Belgium,Croatia,England,O.Dembele,6,Rakitic,7.3,4-3e,"Martial, E.Hazard, L.Bailey, Lacazette x2, Coman, Origi"
+56,Argentina,Spain,Brazil,England,Diego Costa,7,Banega,7.64,2-1e,"Isco, Dybala, OG"
+57,Mexico,Russia,France,Belgium,E.Hazard,7,E.Hazard,7.77,3-0,"Guardado, Layun, G,Vazquez"
+58,France,Egypt,England,South Korea,Lewandowski,6,Salah,7.56,1-0,Lacazette
+59,Brazil,Argentina,Switzerland,Uruguay,Harry Kane,7,Neymar,8.17,3-1e,"Douglas Costa, Icardi, Jesus x2"
+60,France,Portugal,Colombia,Germany,Griezmann,8,Griezmann,7.73,1-1p,"Coman, Bernardo Silva"
+61,Brazil,Switzerland,France,Spain,Griezmann,6,Firmino,7.6,3-0,"Firmino,  Luan, Neymar"
+62,Russia,Croatia,Sweden,Poland,Guidetti,6,M.Pjaca,7.86,1-0,Golovin
+63,Belgium,Uruguay,Brazil,Portugal,Mertens,8,E.Hazard,8.54,2-0,"Mertens, R.Lukaku"
+64,Belgium,France,Portugal,England,C.Ronaldo,8,E.Hazard,8.1,1-0,Origi
+65,Belgium,Spain,England,Russia,R.Lukaku,9,E.Hazard,8.3,2-0,R.Lukaku x2
+66,France,Denmark,Germany,Sweden,C.Ronaldo,7,Guidetti,7.86,4-1.,"Mbappe, Sidibé, Jorgensen, OG, Griezmann"
+67,Belgium,Brazil,France,Peru,Neymar,5,Neymar,7.81,2-1.,"Coutinho, E.Hazard x2"
+68,Spain,Belgium,Germany,France,Harry Kane,6,E.Hazard,8.11,4-0,"Isco, Diego Costa, D.Silva, Vitolo"
+69,Croatia,Mexico,Belgium,Portugal,Lewandowski,8,E.Hazard,7.41,1-0,Rakitic
+70,Croatia,France,Germany,Colombia,Falcao,8,Falcao,7.7,2-1.,"Mandzukic, Matuidi, Rakitic"
+71,Belgium,Germany,Spain,Argentina,T.Muller,9,T.Muller ,7.91,3-2.,"Witsel, Mertens, T.Muller x2, De Bruyne"
+72,Croatia,Russia,Belgium,Brazil,Aguero,7,L.Bailey,7.73,2-0,Mandzukic x2
+73,France,Portugal,Germany,Mexico,Griezmann,7,Griezmann,7.81,3-1.,"Griezmann x2, A.Silva, Martial"
+74,Spain,Germany,Argentina,Brazil,Harry Kane,6,Reus,7.83,1-0,Aspas
+75,Germany,England,Russia,Uruguay,Cavani,9,Harry Kane,7.86,3-2.,"Sané, Reus x2, Harry Kane, Sterling"
+76,Brazil,Germany,France,Spain,E.Hazard,7,O.Dembele,7.4,3-0,"Firmino x2, Neymar"
+77,Argentina,Colombia,Belgium,Peru,Falcao,10,Falcao,8.33,6-4.,"Messi, Bacca x2, OG, Falcao x2, Pereyra, Higuain, Aguero, Dybala"
+78,Argentina,Belgium,France,Sweden,Guidetti,7,Guidetti,7.94,2-1.,"Dybala, Pereyra, Mertens"
+79,Spain,Senegal,Portugal,Poland,Mandzukic,8,Isco,7.51,1-0,Koke
+80,Brazil,Germany,France,Argentina,T.Muller,9,Griezmann,8.33,2-1.,"T.Muller, Neymar, Fabinho"
+81,France,Uruguay,Belgium,Poland,L.Suarez,6,L.Bailey,7.77,1-0,Mbappe
+82,Spain,France,Brazil,Costa Rica,Firmino,8,Firmino,8.04,2-0,Mata x2
+83,England,Spain,Germany,Uruguay,Harry Kane,9,Harry Kane,8.13,3-1.,"Harry Kane, Thiago, Sterling"
+84,Germany,Belgium,France,Peru,O.Dembele,6,O.Dembele,7.9,3-1.,"T.Muller, Werner, R.Lukaku"
+85,Brazil,Spain,Mexico,Russia,J.Hernandez,11,J.Hernandez,8.13,2-1.,"Firmino, Isco, Neymar"
+86,Denmark,France,Germany,Switzerland,Higuain,5,Schone ,7,1-0,Dolberg
+87,Brazil,Switzerland,France,Uruguay,Neymar,7,Neymar,7.96,5-0,"D.Alves, Coutnho, Neymar, Fabinho, Willian"
+88,Germany,France,Portugal,Mexico,J.Hernandez,6,Draxler,7.41,1-0,Draxler
+89,Brazil,Poland,France,Uruguay,Neymar,6,Neymar,8,1-0,Firmino
+90,Croatia,Argentina,Germany,England,Harry Kane,7,Harry Kane,7.87,1-0e,Kalinic
+91,Argentina,Poland,Croatia,Brazil,Aguero,7,Aguero,7.97,6-4.,"Aguero x3, Lewandowski x2, Otamendi, Higuain, Glik, Banega, Zielinski"
+92,Germany,Belgium,Uruguay,Spain,Werner,8,L.Suarez,7.87,6-2.,"Draxler, R.Lukaku, OG, L.Bailey, Werner x2, Goretzka, Brandt"
+93,Colombia,Germany,France,Denmark,Jorgensen,5,Eriksen,7.46,1-0,Falcao
+94,Brazil,Belgium,Denmark,Croatia,Neymar,6,Neymar,8.21,3-2.,"Fabinho, L.Bailey, E.Hazard, Douglas Costa, Firmino"
+95,Germany,Argentina,Russia,Colombia,Smolov,7,Pereyra ,7.99,5-2.,"T.Muller x3, Higuain, Ozil, Draxler, Tagliafico"
+96,Portugal,France,Mexico,Colombia,C.Ronaldo,9,C.Ronaldo,8.17,1-0,A.Silva
+97,France,Denmark,Belgium,Sweden,Guidetti,7,E.Hazard,7.99,4-2.,"Coman, Griezmann x2, Vestergaard, Sisto, O.Dembele"
+98,Brazil,Belgium,France,Portugal,Cavani,6,E.Hazard,7.56,1-0,Firmino
+99,Portugal,Argentina,Belgium,Switzerland,E.Hazard,8,Bernardo Silva,7.66,2-0,C.Ronaldo x2
+100,Belgium,Spain,England,Croatia,R.Lukaku,8,Perisic,7.94,1-1p,"Koke, R.Lukaku"

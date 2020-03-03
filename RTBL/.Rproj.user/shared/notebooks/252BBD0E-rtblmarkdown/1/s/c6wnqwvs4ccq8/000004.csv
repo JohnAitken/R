@@ -1,0 +1,3 @@
+"0","ggplot(rtbl[!is.na(rtbl$bps17_app_status),],aes(x=bps17_app_status,fill=MI_BPS17_ONLINE_REC_FLG)) + "
+"0","  geom_bar() +"
+"0","  labs(x = ""app_status"",title=""app_status count showing online receipts"")"

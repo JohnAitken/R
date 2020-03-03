@@ -1,0 +1,3 @@
+"0","ggplot(rtbl[!is.na(rtbl$bps17_app_status),],aes(x=bps17_app_status)) +"
+"0","  geom_bar() +"
+"0","  labs(x = ""app_status"",title=""NA's instead of blanks"")"

@@ -1,0 +1,6 @@
+"0","rtbl$MI_BPS17_ONLINE_REC_FLG <- as.factor(rtbl$MI_BPS17_ONLINE_REC_FLG)"
+"0","class(rtbl$MI_BPS17_ONLINE_REC_FLG)"
+"1","[1]"
+"1"," ""factor"""
+"1","
+"
