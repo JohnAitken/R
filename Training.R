@@ -1,5 +1,6 @@
 library(tidyverse)
 library(ggplot2)
+library(readxl)
 
 #load the data and group by provider count per dropoff level
 df <- read.csv("Final_Dropoff_Data_xl.csv") %>%
@@ -12,3 +13,10 @@ df <- read.csv("Final_Dropoff_Data_xl.csv") %>%
         scale_x_continuous(n.breaks = 10, limits = c(0,10))
 
 print(plt)
+#consider the data - should more be +1 months than 0?
+#And why the negative months? Consider re-doing the data
+
+raw <- read_excel("Drafts_Raw_Data_v2.xlsx") %>%
+    count(UPIN) %>%
+    arrange(desc(n))
+print(raw)
