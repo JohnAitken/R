@@ -5,6 +5,7 @@ length(a1)
 ab <- c(1,2,3,5,3,32,3,4,5,6,6,54,4,3,22,234)
 ab[c(1,length(ab))]
 
+
 test <- rep(1:10,by=2,each=3,times=2)
 test
 test
