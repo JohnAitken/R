@@ -17,11 +17,12 @@ coverage](https://codecov.io/gh/tidyverse/dplyr/branch/main/graph/badge.svg)](ht
 dplyr is a grammar of data manipulation, providing a consistent set of
 verbs that help you solve the most common data manipulation challenges:
 
-- `mutate()` adds new variables that are functions of existing variables
-- `select()` picks variables based on their names.
-- `filter()` picks cases based on their values.
-- `summarise()` reduces multiple values down to a single summary.
-- `arrange()` changes the ordering of the rows.
+-   `mutate()` adds new variables that are functions of existing
+    variables
+-   `select()` picks variables based on their names.
+-   `filter()` picks cases based on their values.
+-   `summarise()` reduces multiple values down to a single summary.
+-   `arrange()` changes the ordering of the rows.
 
 These all combine naturally with `group_by()` which allows you to
 perform any operation “by group”. You can learn more about them in
@@ -39,15 +40,15 @@ In addition to data frames/tibbles, dplyr makes working with other
 computational backends accessible and efficient. Below is a list of
 alternative backends:
 
-- [dtplyr](https://dtplyr.tidyverse.org/): for large, in-memory
-  datasets. Translates your dplyr code to high performance
-  [data.table](https://rdatatable.gitlab.io/data.table/) code.
+-   [dtplyr](https://dtplyr.tidyverse.org/): for large, in-memory
+    datasets. Translates your dplyr code to high performance
+    [data.table](https://rdatatable.gitlab.io/data.table/) code.
 
-- [dbplyr](https://dbplyr.tidyverse.org/): for data stored in a
-  relational database. Translates your dplyr code to SQL.
+-   [dbplyr](https://dbplyr.tidyverse.org/): for data stored in a
+    relational database. Translates your dplyr code to SQL.
 
-- [sparklyr](https://spark.rstudio.com): for very large datasets stored
-  in [Apache Spark](https://spark.apache.org).
+-   [sparklyr](https://spark.rstudio.com): for very large datasets
+    stored in [Apache Spark](https://spark.apache.org).
 
 ## Installation
 
