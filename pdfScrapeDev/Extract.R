@@ -5,13 +5,9 @@ library("dplyr")
 library("stringr")
 library("lubridate")
 
-#set PDF file location and working directory
-
-setwd("~/R/PDF_scrape")
-
 
 #Temp for testing - will need to automate based on list in folder when able
-file <- '9362957 515902 HaleSchool Draft AY201819 allocation 09May2019.pdf'
+file <- '10088075_10055_202324.pdf'
 
 #Scrape text into list of lists based on page number
 Scrape1 <- pdf_text(file)  %>% strsplit(split = "\n")
