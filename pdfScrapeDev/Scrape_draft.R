@@ -1,4 +1,5 @@
 
+
 # VERSION 4
 
 
@@ -15,10 +16,11 @@ pdf_file <- "10088075_10055_202324.pdf"
 text <- ocr(pdf_file, engine = eng)
 
 
-num_pages <- 4  # Update with the actual number of pages
+num_pages <- 4 # Update with the actual number of pages
 
 # Initialize a list to store results
 all_results <- list()
+
 
 # Loop through pages 2 to num_pages+1
 for (page_num in 2:(num_pages + 1)) {
