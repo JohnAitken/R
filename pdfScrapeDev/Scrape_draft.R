@@ -1,6 +1,6 @@
 
 
-# VERSION 4
+# ATTEMPT 4
 
 
 start_time <- Sys.time()
@@ -16,13 +16,13 @@ pdf_file <- "10088075_10055_202324.pdf"
 text <- ocr(pdf_file, engine = eng)
 
 
-num_pages <- 4 # Update with the actual number of pages
+num_pages <- 4 # Update with the actual number of pages (not including cover)
 
 # Initialize a list to store results
 all_results <- list()
 
 
-# Loop through pages 2 to num_pages+1
+# Loop through pages 2 to num_pages+1 
 for (page_num in 2:(num_pages + 1)) {
   text_lines <- strsplit(text, "\n")[[page_num]]
   # Create a data frame with index, page, text_lines, and pdf_file columns
@@ -38,7 +38,7 @@ for (page_num in 2:(num_pages + 1)) {
 # Combine the results into a single data frame
 df <- do.call(rbind, all_results)
 
-# Delete the PNGs in folder
+# Delete any PNGs in folder left over from the OCR
 png_files <- list.files(pattern = "\\.png$")
 if (length(png_files) > 0) {
   # Remove all files with a ".png" extension
@@ -48,7 +48,7 @@ if (length(png_files) > 0) {
   cat("No PNG files found in the working directory.\n")
 }
 
-# Calculate and print the elapsed time
+# Print the elapsed time to process
 end_time <- Sys.time()
 elapsed_time <- end_time - start_time
 cat("Elapsed time:", format(elapsed_time, units = "secs"), "\n")
