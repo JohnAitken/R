@@ -132,6 +132,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="pdf-scraping-of-a-gag" class="level2">
 <h2 class="anchored" data-anchor-id="pdf-scraping-of-a-gag">PDF Scraping of a GAG</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pdf_folder <span class="ot">&lt;-</span> <span class="st">"C:/Users/JA/Documents/Git_Repositories/R/pdfScrapeDev"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(pdf_folder)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>I used the Tesseract library in R to ocr scan the contents of a GAG as a starting process. (I used ChatGPT for a lot of it!).</p>
 <p>OCR was required because the GAGs were not amenable to reading using the PDFTools package, which would have been a lot easier and with a cleaner output.</p>
 <p>And though it is slow, this method would get me the raw data I could use to work out how to extract the pertinent information we need from the GAG to compare against other environment GAGs.</p>
@@ -206,12 +210,10 @@ elapsed_time &lt;- end_time - start_time
 cat("Elapsed time:", format(elapsed_time, units = "secs"), "\n")</code></pre>
 <p>The filename used is temporary, as is the GAG itself, but we found a GAG that was funded in such a way that all the extra tables that might nt have appeared on some GAGs, appear on this one. I took this as being the base for initial checks.</p>
 <p>The output is a dataframe assigned to variable <em>df</em>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>function (x, df1, df2, ncp, log = FALSE)  </code></pre>
-</div>
-</div>
+<pre><code>'data.frame':   129 obs. of  3 variables:
+ $ pdf_file  : chr  "./10088075_10055_202324.pdf" "./10088075_10055_202324.pdf" "./10088075_10055_202324.pdf" "./10088075_10055_202324.pdf" ...
+ $ page      : num  1 1 1 1 1 1 1 1 1 1 ...
+ $ text_lines: chr  "Education &amp; Skills Annual Letter of Funding" "runeing “gency Academic year 2023 to 2024 General Annual Grant Statement" "Name St. Bede's and St. Joseph's Catholic College, A Voluntary Academy" "LA name Bradford" ...</code></pre>
 <p>Note the datatype of the <strong>text_lines</strong> column is <em>chr</em>. By default, a column that contains a character string in it is converted to factors. But because Factors are really for categorical data, <em>chr</em> suits well for mixes of numeric and alphanumeric data like this.</p>
 <div class="callout-important callout callout-style-simple no-icon">
 <div class="callout-body d-flex">
@@ -230,7 +232,19 @@ cat("Elapsed time:", format(elapsed_time, units = "secs"), "\n")</code></pre>
 <p>First job was to remove all the rows of junk data, so in the csv I added a column called ’<em>remove_tag’</em> as a boolean <em>TRUE</em> or <em>FALSE</em>, determined on whether I wanted to keep the line or not. CSV is just easier for me to do this in. Once done, I could re-import to a dataframe and use that TAG as a filter later on down the line. I have done this here with the file <strong>raw_extract1.csv</strong>, whch I will pull into the <strong>dfx</strong> variable to keep it from the initial df.</p>
 <p>This is so we can have a baseline with what to do for each row. Identifying the rows later down the line would be a future me’s prob…</p>
 <div class="cell">
-
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"~/Git_Repositories/R/pdfScrapeDev"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>dfx <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"raw_extract.csv"</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(dfx)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 219
+Columns: 4
+$ pdf_file   &lt;chr&gt; "./10055694_10008_202324.pdf", "./10055694_10008_202324.pdf…
+$ page       &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,…
+$ text_lines &lt;chr&gt; "7", "", "1 + oan Annual Letter of Funding", "", "ucation i…
+$ remove_tag &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, FALSE…</code></pre>
+</div>
 </div>
 </section>
 

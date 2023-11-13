@@ -5,7 +5,12 @@ format: html
 editor: visual
 ---
 
-## PDF Scraping of a GAG
+# PDF Scraping of a GAG
+
+```{r}
+pdf_folder <- "C:/Users/JA/Documents/Git_Repositories/R/pdfScrapeDev"
+setwd(pdf_folder)
+```
 
 I used the Tesseract library in R to ocr scan the contents of a GAG as a starting process. (I used ChatGPT for a lot of it!).
 
@@ -106,11 +111,39 @@ I saved the dataframe to a CSV file. It was important to approach this increment
 
 ## Keep or do not
 
-First job was to remove all the rows of junk data, so in the csv I added a column called '*remove_tag'* as a boolean *TRUE* or *FALSE*, determined on whether I wanted to keep the line or not. CSV is just easier for me to do this in. Once done, I could re-import to a dataframe and use that TAG as a filter later on down the line. I have done this here with the file **raw_extract1.csv**, whch I will pull into the **dfx** variable to keep it from the initial df.
+First job was to remove all the rows of junk data, so in the csv I added a column called '*remove_tag'* as a boolean *TRUE* or *FALSE*, determined on whether I wanted to keep the line or not. CSV is just easier for me to do this in. Once done, I could re-import to a dataframe and use that TAG as a filter later on down the line (I will use dplyr package for this, in the Tidyverse). I have done this here with the file **raw_extract1.csv**, whch I will pull into the **dfx** variable to keep it from the initial df.
 
 This is so we can have a baseline with what to do for each row. Identifying the rows later down the line would be a future me's prob...
 
-```{r}
+```{r include = FALSE, echo = TRUE}
+library(tidyverse)
 
 
 ```
+
+```{r}
+setwd("~/Git_Repositories/R/pdfScrapeDev")
+
+dfx <- read.csv("raw_extract.csv")
+
+glimpse(dfx)
+```
+
+Note the logical data type for the boolean column. ('*lgl'*)
+
+```{r}
+nrow(dfx)
+```
+
+We have 219 rows. Now we delete out any with a TRUE state. We will assign that to the variable df_f
+
+```{r}
+ 
+df_f <- filter(dfx, remove_tag == "TRUE") 
+
+nrow(df_f)
+```
+
+We have that down 105 rows that will need individually addressing.
+
+## Text stripping
