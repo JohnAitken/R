@@ -64,3 +64,4 @@ end_time <- Sys.time()
 elapsed_time <- end_time - start_time
 cat("Elapsed time:", format(elapsed_time, units = "secs"), "\n")
 
+str(df)

@@ -1,0 +1,116 @@
+---
+title: "pdf_scrape_log"
+author: "John Aitken"
+format: html
+editor: visual
+---
+
+## PDF Scraping of a GAG
+
+I used the Tesseract library in R to ocr scan the contents of a GAG as a starting process. (I used ChatGPT for a lot of it!).
+
+OCR was required because the GAGs were not amenable to reading using the PDFTools package, which would have been a lot easier and with a cleaner output.
+
+And though it is slow, this method would get me the raw data I could use to work out how to extract the pertinent information we need from the GAG to compare against other environment GAGs.
+
+## OCR Code
+
+So I extract the data line by line and then add a couple of columns - namely the filename and page number - to a finished dataframe we can then work with. The overall code is something like this:
+
+```         
+# ATTEMPT 5
+
+start_time <- Sys.time()
+
+library(tesseract)
+library(tidyverse)
+
+# Set your working directory to the folder containing PDF files
+pdf_folder <- "C:/Users/JA/Documents/Git_Repositories/R/pdfScrapeDev"
+setwd(pdf_folder)
+
+# Tesseract read
+eng <- tesseract("eng")
+
+# Get a list of all PDF files in the folder
+pdf_files <- list.files(pattern = "\\.pdf$", full.names = TRUE)
+
+# Initialize a list to store results
+all_results <- list()
+
+# Loop through each PDF file
+for (pdf_file in pdf_files) {
+  cat("Processing file:", pdf_file, "\n")
+  
+  # Perform OCR on the PDF file
+  text <- ocr(pdf_file, engine = eng)
+  
+  # Determine the number of pages in the PDF
+  num_pages <- length(strsplit(text, "\n")[[1]])
+  
+  # Loop through pages 2 to num_pages+1
+  for (page_num in 2:(num_pages + 1)) {
+    if (length(text) >= page_num) {
+      text_lines <- strsplit(text, "\n")[[page_num]]
+      
+      if (length(text_lines) > 0) {
+        # Create a data frame with index, page, text_lines, and pdf_file columns
+        result_df <- data.frame(
+          pdf_file = pdf_file,
+          page = page_num - 1,
+          text_lines = text_lines
+        )
+        all_results <- c(all_results, list(result_df))
+      }
+    }
+  }
+}
+
+# Combine the results into a single data frame
+df <- dplyr::bind_rows(all_results)
+
+# Delete any PNGs in folder left over from the OCR
+png_files <- list.files(pattern = "\\.png$")
+if (length(png_files) > 0) {
+  # Remove all files with a ".png" extension
+  file.remove(png_files)
+  cat("Deleted", length(png_files), "PNG files.\n")
+} else {
+  cat("No PNG files found in the working directory.\n")
+}
+
+# Print the elapsed time to process
+end_time <- Sys.time()
+elapsed_time <- end_time - start_time
+cat("Elapsed time:", format(elapsed_time, units = "secs"), "\n")
+```
+
+The filename used is temporary, as is the GAG itself, but we found a GAG that was funded in such a way that all the extra tables that might nt have appeared on some GAGs, appear on this one. I took this as being the base for initial checks.
+
+The output is a dataframe assigned to variable *df*:
+
+```         
+'data.frame':   129 obs. of  3 variables:
+ $ pdf_file  : chr  "./10088075_10055_202324.pdf" "./10088075_10055_202324.pdf" "./10088075_10055_202324.pdf" "./10088075_10055_202324.pdf" ...
+ $ page      : num  1 1 1 1 1 1 1 1 1 1 ...
+ $ text_lines: chr  "Education & Skills Annual Letter of Funding" "runeing “gency Academic year 2023 to 2024 General Annual Grant Statement" "Name St. Bede's and St. Joseph's Catholic College, A Voluntary Academy" "LA name Bradford" ...
+```
+
+Note the datatype of the **text_lines** column is *chr*. By default, a column that contains a character string in it is converted to factors. But because Factors are really for categorical data, *chr* suits well for mixes of numeric and alphanumeric data like this.
+
+::: {.callout-important appearance="minimal"}
+Just to note, the elapsed time for doing a list of 5 Mainstream GAGs on a shared drive is 11.5 mins, which is bad. Doing that on my local machine takes 2.5 mins, which while not fast, is something to note when we get to working on folders full of PDFs.
+:::
+
+I saved the dataframe to a CSV file. It was important to approach this incrementally, as the text_lines data was incredibly varied, and there was a mix of text we wanted (such as the values) and text we did not, which meant each row would have to have it's own actions applied to it.
+
+## Keep or do not
+
+First job was to remove all the rows of junk data, so in the csv I added a column called '*remove_tag'* as a boolean *TRUE* or *FALSE*, determined on whether I wanted to keep the line or not. CSV is just easier for me to do this in. Once done, I could re-import to a dataframe and use that TAG as a filter later on down the line. I have done this here with the file **raw_extract1.csv**, whch I will pull into the **dfx** variable to keep it from the initial df.
+
+This is so we can have a baseline with what to do for each row. Identifying the rows later down the line would be a future me's prob...
+
+```{r}
+
+
+```
