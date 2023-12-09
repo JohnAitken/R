@@ -130,8 +130,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="pdf-scraping-of-a-gag" class="level2">
-<h2 class="anchored" data-anchor-id="pdf-scraping-of-a-gag">PDF Scraping of a GAG</h2>
+<section id="pdf-scraping-of-a-gag" class="level1">
+<h1>PDF Scraping of a GAG</h1>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pdf_folder <span class="ot">&lt;-</span> <span class="st">"C:/Users/JA/Documents/Git_Repositories/R/pdfScrapeDev"</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(pdf_folder)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -139,7 +139,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>I used the Tesseract library in R to ocr scan the contents of a GAG as a starting process. (I used ChatGPT for a lot of it!).</p>
 <p>OCR was required because the GAGs were not amenable to reading using the PDFTools package, which would have been a lot easier and with a cleaner output.</p>
 <p>And though it is slow, this method would get me the raw data I could use to work out how to extract the pertinent information we need from the GAG to compare against other environment GAGs.</p>
-</section>
 <section id="ocr-code" class="level2">
 <h2 class="anchored" data-anchor-id="ocr-code">OCR Code</h2>
 <p>So I extract the data line by line and then add a couple of columns - namely the filename and page number - to a finished dataframe we can then work with. The overall code is something like this:</p>
@@ -229,7 +228,7 @@ cat("Elapsed time:", format(elapsed_time, units = "secs"), "\n")</code></pre>
 </section>
 <section id="keep-or-do-not" class="level2">
 <h2 class="anchored" data-anchor-id="keep-or-do-not">Keep or do not</h2>
-<p>First job was to remove all the rows of junk data, so in the csv I added a column called ’<em>remove_tag’</em> as a boolean <em>TRUE</em> or <em>FALSE</em>, determined on whether I wanted to keep the line or not. CSV is just easier for me to do this in. Once done, I could re-import to a dataframe and use that TAG as a filter later on down the line. I have done this here with the file <strong>raw_extract1.csv</strong>, whch I will pull into the <strong>dfx</strong> variable to keep it from the initial df.</p>
+<p>First job was to remove all the rows of junk data, so in the csv I added a column called ’<em>remove_tag’</em> as a boolean <em>TRUE</em> or <em>FALSE</em>, determined on whether I wanted to keep the line or not. CSV is just easier for me to do this in. Once done, I could re-import to a dataframe and use that TAG as a filter later on down the line (I will use dplyr package for this, in the Tidyverse). I have done this here with the file <strong>raw_extract1.csv</strong>, whch I will pull into the <strong>dfx</strong> variable to keep it from the initial df.</p>
 <p>This is so we can have a baseline with what to do for each row. Identifying the rows later down the line would be a future me’s prob…</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"~/Git_Repositories/R/pdfScrapeDev"</span>)</span>
@@ -246,6 +245,27 @@ $ text_lines &lt;chr&gt; "7", "", "1 + oan Annual Letter of Funding", "", "ucati
 $ remove_tag &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, FALSE…</code></pre>
 </div>
 </div>
+<p>Note the logical data type for the boolean column. (’<em>lgl’</em>)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(dfx)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 219</code></pre>
+</div>
+</div>
+<p>We have 219 rows. Now we delete out any with a TRUE state. We will assign that to the variable df_f</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>df_f <span class="ot">&lt;-</span> <span class="fu">filter</span>(dfx, remove_tag <span class="sc">==</span> <span class="st">"TRUE"</span>) </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(df_f)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 105</code></pre>
+</div>
+</div>
+<p>We have that down 105 rows that will need individually addressing.</p>
+</section>
+<section id="text-stripping" class="level2">
+<h2 class="anchored" data-anchor-id="text-stripping">Text stripping</h2>
+</section>
 </section>
 
 </main>
